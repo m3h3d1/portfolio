@@ -1,27 +1,58 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
+
+const SECTIONS = ["home", "projects", "about", "contact"];
 
 export const Header = () => {
   const [activeSection, setActiveSection] = useState("home");
+  const sectionIds = useRef(SECTIONS);
 
-  const handleClick = (sectionId: string) => {
-    setActiveSection(sectionId);
-    document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" });
+  const scrollToSection = (id: string) => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+      setActiveSection(id);
+    }
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      let closest = activeSection;
+      let minDist = window.innerHeight;
+
+      for (const id of sectionIds.current) {
+        const el = document.getElementById(id);
+        if (el) {
+          const rect = el.getBoundingClientRect();
+          const dist = Math.abs(rect.top - window.innerHeight / 3);
+
+          if (dist < minDist && rect.bottom > 0) {
+            closest = id;
+            minDist = dist;
+          }
+        }
+      }
+
+      setActiveSection(closest);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [activeSection]);
+
   return (
-    <div className="flex justify-center items-center fixed top-3 w-full z-10">
+    <div className="fixed top-3 w-full z-10 flex justify-center items-center">
       <nav className="flex gap-1 p-0.5 border border-white/15 rounded-full bg-white/10 backdrop-blur">
-        {["home", "projects", "about", "contact"].map((section) => (
+        {sectionIds.current.map((id) => (
           <button
-            key={section}
-            className={`nav-item ${
-              activeSection === section ? "bg-white text-gray-900" : ""
+            key={id}
+            onClick={() => scrollToSection(id)}
+            className={`px-4 py-2 rounded-full transition-colors ${
+              activeSection === id ? "bg-white text-gray-900" : "text-white"
             }`}
-            onClick={() => handleClick(section)}
           >
-            {section.charAt(0).toUpperCase() + section.slice(1)}
+            {id[0].toUpperCase() + id.slice(1)}
           </button>
         ))}
       </nav>
