@@ -113,17 +113,18 @@ export const HeroSection = () => {
               <div className="bg-green-500 absolute inset-0 rounded-full animate-ping-large"></div>
             </div>
             <div className="text-sm font-medium">
-              Available for new projects
+              Available for new opportunities
             </div>
           </div>
         </div>
         <div className="max-w-lg mx-auto">
           <h1 className="font-serif text-3xl md:text-5xl text-center mt-8 tracking-wide">
-            Building Exceptional User Experiences
+            Building Exceptional Web Apps
           </h1>
           <p className="mt-4 text-center text-white/60 md:text-lg">
-            I specialize in transforming client&rsquo;s demand into functional,
-            high-performing web applications. Let&rsquo;s discuss your next project.
+            I specialize in building clean, scalable systems that power
+            reliable web applications. Let&rsquo;s talk about your next tech
+            challenge.
           </p>
         </div>
         <div className="flex flex-col md:flex-row justify-center items-center mt-8 gap-4">

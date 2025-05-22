@@ -3,50 +3,81 @@ import { SectionHeader } from "@/components/SectionHeader";
 import { Card } from "@/components/Card";
 import bookImage from "@/assets/images/book-cover.png";
 import Image from "next/image";
-import JavaScriptIcon from "@/assets/icons/square-js.svg";
-import HtmlIcon from "@/assets/icons/html5.svg";
-import CssIcon from "@/assets/icons/css3.svg";
-import ReactIcon from "@/assets/icons/react.svg";
-import ChromeIcon from "@/assets/icons/chrome.svg";
-import GithubIcon from "@/assets/icons/github.svg";
-import mapImage from "@/assets/images/map.png";
+import JavaIcon from "@/assets/icons/toolbox/java.svg";
+import SpringBootIcon from "@/assets/icons/toolbox/spring-boot.svg";
+import PostgreSQLIcon from "@/assets/icons/toolbox/postgresql.svg";
+import DockerIcon from "@/assets/icons/toolbox/docker.svg";
+import GrafanaIcon from "@/assets/icons/toolbox/grafana.svg";
+import AWSIcon from "@/assets/icons/toolbox/aws.svg";
+import RabbitMQIcon from "@/assets/icons/toolbox/rabbitmq.svg";
+import ElasticIcon from "@/assets/icons/toolbox/elastic.svg";
+import RedisIcon from "@/assets/icons/toolbox/redis.svg";
+import JavaScriptIcon from "@/assets/icons/toolbox/square-js.svg";
+import ReactIcon from "@/assets/icons/toolbox/react.svg";
+import GitIcon from "@/assets/icons/toolbox/git.svg";
+import mapImage from "@/assets/images/map.jpg";
 import smileMemoji from "@/assets/images/memoji-smile.png";
 import { CardHeader } from "@/components/CardHeader";
 import { ToolboxItems } from "@/components/ToolboxItems";
 import { motion } from "framer-motion";
 import { useRef } from "react";
 
+// https://www.svgrepo.com/vectors/docker
 const toolboxItems = [
+  {
+    title: "Java",
+    iconType: JavaIcon,
+  },
+  {
+    title: "Spring Boot",
+    iconType: SpringBootIcon,
+  },
+  {
+    title: "PostgreSQL",
+    iconType: PostgreSQLIcon,
+  },
+  {
+    title: "Redis",
+    iconType: RedisIcon,
+  },
+  {
+    title: "Docker",
+    iconType: DockerIcon,
+  },
+  {
+    title: "Grafana",
+    iconType: GrafanaIcon,
+  },
+  {
+    title: "AWS",
+    iconType: AWSIcon,
+  },
+  {
+    title: "RabbitMQ",
+    iconType: RabbitMQIcon,
+  },
+  {
+    title: "ELK Stack",
+    iconType: ElasticIcon,
+  },
   {
     title: "JavaScript",
     iconType: JavaScriptIcon,
-  },
-  {
-    title: "HTML5",
-    iconType: HtmlIcon,
-  },
-  {
-    title: "CSS3",
-    iconType: CssIcon,
   },
   {
     title: "React",
     iconType: ReactIcon,
   },
   {
-    title: "Chrome",
-    iconType: ChromeIcon,
-  },
-  {
-    title: "Github",
-    iconType: GithubIcon,
+    title: "Git",
+    iconType: GitIcon,
   },
 ];
 
 const hobbies = [
   {
-    title: "Painting",
-    emoji: "🎨",
+    title: "Traveling",
+    emoji: "🌍",
     left: "5%",
     top: "5%",
   },
@@ -75,8 +106,8 @@ const hobbies = [
     top: "45%",
   },
   {
-    title: "Fitness",
-    emoji: "🏋️",
+    title: "Sports",
+    emoji: "🤾‍♂️",
     left: "5%",
     top: "65%",
   },
@@ -103,7 +134,7 @@ export const AboutSection = () => {
             <Card className="h-[320px] md:col-span-2 lg:col-span-1">
               <CardHeader
                 title="My Reads"
-                description="Explore the books shaping my perspectives."
+                description="A Yearly Personal Recommendation"
               />
               <div className="w-40 mx-auto mt-2 md:mt-0">
                 <Image src={bookImage} alt="Book Cover" />
@@ -131,7 +162,7 @@ export const AboutSection = () => {
             <Card className="h-[320px] p-0 flex flex-col col-span-3 lg:col-span-2">
               <CardHeader
                 title="Beyond the Code"
-                description="Explore my interest and hobbies beyond the digital realm."
+                description="Explore my interest and hobbies beyond the digital realm"
                 className="px-6 py-6"
               />
               <div className="relative flex-1" ref={constraintRef}>

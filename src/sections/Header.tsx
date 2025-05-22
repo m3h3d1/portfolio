@@ -2,7 +2,8 @@
 
 import { useState, useEffect, useRef } from "react";
 
-const SECTIONS = ["home", "projects", "about", "contact"];
+// const SECTIONS = ["home", "projects", "about", "contact"];
+const SECTIONS = ["home", "about", "contact"];
 
 export const Header = () => {
   const [activeSection, setActiveSection] = useState("home");

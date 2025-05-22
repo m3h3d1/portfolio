@@ -3,16 +3,16 @@ import { Fragment } from "react";
 
 const words = [
   "Performant",
-  "Accessible",
   "Secure",
-  "Interactive",
-  "Scalable",
+  "Maintainable",
+  "Reliable",
+  "Modular",
+  "Optimized",
+  "Extensible",
+  "Clean Code",
   "User Friendly",
   "Responsive",
-  "Maintainable",
-  "Search Optimized",
-  "Usable",
-  "Reliable",
+  "Microservices"
 ];
 
 export const TapeSection = () => {

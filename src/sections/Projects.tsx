@@ -1,5 +1,5 @@
 import darkSaasLandingPage from "@/assets/images/dark-saas-landing-page.png";
-import lightSaasLandingPage from "@/assets/images/light-saas-landing-page.png";
+import hospitalDashboard from "@/assets/images/hospital-dashboard.png";
 import aiStartupLandingPage from "@/assets/images/ai-startup-landing-page.png";
 import Image from "next/image";
 import CheckCircleIcon from "@/assets/icons/check-circle.svg";
@@ -30,7 +30,7 @@ const portfolioProjects = [
       { title: "Increased brand awareness by 15%" },
     ],
     link: "https://youtu.be/7hi5zwO75yc",
-    image: lightSaasLandingPage,
+    image: hospitalDashboard,
   },
   {
     company: "Quantum Dynamics",
